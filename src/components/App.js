@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import '../styles/App.scss';
-import List from './List'
 import { getCharactersFromAPI } from '../service/API';
+import '../styles/App.scss';
+import Header from './Header';
+import List from './List'
+
 
 function App() {
   const [characters, setCharacters] = useState([])
@@ -15,7 +17,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Hola</h1>
+      <Header></Header>
       <List list={characters}></List>
     </div>
   );
