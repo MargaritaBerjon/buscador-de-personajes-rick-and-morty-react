@@ -1,21 +1,14 @@
 import React from 'react';
-import '../styles/App.css';
+import '../styles/App.scss';
+import Card from './Card';
 
 function List(props) {
   console.log(props.list);
 
   return (
     < section className="List" >
-      {props.list.map((elem, i) => <article ><img src={elem.image} alt={
-        elem.name}></img>
-        <h2 >{elem.name}</h2>
-        <div className="results-img">
-          <div className="results-content">
-            <p>{elem.species}</p>
-            <p>{elem.origin.name}</p>
-          </div>
-        </div></article>)}
-
+      {props.list.map((elem, i) => <Card key={i} elem={elem}></Card>
+      )}
     </section >
   );
 }
