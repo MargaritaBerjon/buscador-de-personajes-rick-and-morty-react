@@ -1,14 +1,14 @@
 import React from 'react'
-import '../styles/App.scss';
+import '../styles/Card.scss';
 
 function Card(props) {
 
   return (
-    <article ><img src={props.elem.image} alt={
+    <article className='card'><img src={props.elem.image} alt={
       props.elem.name}></img>
       <h2 >{props.elem.name}</h2>
-      <div className="results-img">
-        <div className="results-content">
+      <div className='card-img'>
+        <div className='card-content'>
           <p>{props.elem.species}</p>
           <p>{props.elem.origin.name}</p>
         </div>

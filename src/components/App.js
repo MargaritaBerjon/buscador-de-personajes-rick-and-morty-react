@@ -16,10 +16,10 @@ function App() {
   console.log(characters);
 
   return (
-    <div className="App">
+    <>
       <Header></Header>
       <List list={characters}></List>
-    </div>
+    </>
   );
 }
 

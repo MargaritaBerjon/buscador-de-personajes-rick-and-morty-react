@@ -1,11 +1,11 @@
 import React from 'react'
-import '../styles/App.scss';
+import '../styles/Header.scss';
 import logo from '../images/logo.png'
 
 function Header() {
 
   return (
-    <h1>
+    <h1 className='header'>
       <img src={logo} alt='Logo Rick and Morty'></img>
     </h1>
   );
