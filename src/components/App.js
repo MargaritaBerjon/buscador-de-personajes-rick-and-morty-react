@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { getCharactersFromAPI } from '../service/API';
 import '../styles/App.scss';
 import Header from './Header';
+import Form from './Form';
 import List from './List'
 
 
@@ -18,6 +19,7 @@ function App() {
   return (
     <>
       <Header></Header>
+      <Form></Form>
       <List list={characters}></List>
     </>
   );
