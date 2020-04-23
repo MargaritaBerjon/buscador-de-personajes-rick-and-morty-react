@@ -20,7 +20,6 @@ function App() {
   }, []);
 
   function onNameChange({ target }) {
-    console.log(target);
     filters.name = target.value;
     setCharacters(applyFilters());
   }
