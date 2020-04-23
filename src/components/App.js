@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Route, Switch } from 'react-router-dom';
 import { getCharactersFromAPI } from '../service/API';
 import '../styles/App.scss';
 import Header from './Header';
