@@ -1,6 +1,14 @@
 .character-detail {
-  margin: 1rem;
+  display: flex;
+  align-items: center;
   padding: 1rem;
   background-color: #f0e14a;
   border: 0.5rem solid #97ce4c;
+}
+
+.character-detail-content {
+  margin-left: 1rem;
+}
+.character-detail-button {
+  cursor: pointer;
 }

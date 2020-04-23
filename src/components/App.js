@@ -36,11 +36,11 @@ function App() {
 
   return (
     <>
+      <Header></Header>
       <Switch>
         <Route exact path='/' render={
           () =>
             <>
-              <Header></Header>
               <Form placeholderSearch='Busca tu personaje' onNameChange={onNameChange}></Form>
               <List list={characters}></List>
             </>
