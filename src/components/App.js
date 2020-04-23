@@ -14,15 +14,24 @@ function App() {
       setCharacters(characters)
     })
   }, []);
-  console.log(characters);
 
-  return (
-    <>
-      <Header></Header>
-      <Form></Form>
-      <List list={characters}></List>
-    </>
-  );
-}
+  function onNameChange({ target }) {
+    console.log(target);
+    const userSearch = target.value;
+    setCharacters(applyFilters())
+  }
 
-export default App;
+  function applyFilters() {
+    //Si filters.name.length es true (hay algo escrito) ? se hace el filtro de allcharacter por nombre, si es false (no hay nada escrito) : se muestran todos los characters. 
+    filters.name.length ? characters.filter(elem => elem.name.toUpperCase().includes(filters.name.toUpperCase())) : characters;
+
+    return (
+      <>
+        <Header></Header>
+        <Form placeholderSearch='Busca tu personaje' onNameChange={onNameChange}></Form>
+        <List list={characters}></List>
+      </>
+    );
+  }
+
+  export default App;

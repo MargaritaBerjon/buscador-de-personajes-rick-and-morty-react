@@ -2,11 +2,10 @@ import React from 'react'
 import '../styles/Form.scss';
 
 
-function Form() {
-
+function Form(props) {
   return (
     <form className='form'>
-      <input className='fom-input-text' type='search'></input>
+      <input className='fom-input-text' type='search' onChange={props.onNameChange} placeholder={props.placeholderSearch}></input>
     </form>
   );
 }
