@@ -6,7 +6,7 @@ function Form() {
 
   return (
     <form className='form'>
-      <input className='fom-input-text' type='text'></input>
+      <input className='fom-input-text' type='search'></input>
     </form>
   );
 }
