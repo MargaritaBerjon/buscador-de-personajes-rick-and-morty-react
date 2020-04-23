@@ -1,5 +1,6 @@
 import React from 'react'
-import '../styles/CharterDetail.scss';
+import { Link } from "react-router-dom";
+import '../styles/CharacterDetail.scss';
 
 function CharterDetail(props) {
 
@@ -11,6 +12,7 @@ function CharterDetail(props) {
         <div className='character-detail-content'>
           <p>{props.elem.species}</p>
           <p>{props.elem.origin.name}</p>
+          <Link to={'/'}>Volver</Link>
         </div>
       </div></article>
   );

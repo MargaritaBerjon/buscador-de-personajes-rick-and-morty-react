@@ -4,7 +4,8 @@ import { getCharactersFromAPI } from '../service/API';
 import '../styles/App.scss';
 import Header from './Header';
 import Form from './Form';
-import List from './List'
+import List from './List';
+import CharacterDetail from './CharterDetail'
 
 let allCharacters = [];
 let filters = { name: '' };
@@ -29,11 +30,30 @@ function App() {
     return filters.name.length ? allCharacters.filter(elem => elem.name.toUpperCase().includes(filters.name.toUpperCase())) : allCharacters;
   }
 
+  function searchUserById(id, array) {
+    return array.find(elem => elem.id.toString() === id.toString());
+  }
+
   return (
     <>
-      <Header></Header>
-      <Form placeholderSearch='Busca tu personaje' onNameChange={onNameChange}></Form>
-      <List list={characters}></List>
+      <Switch>
+        <Route exact path='/' render={
+          () =>
+            <>
+              <Header></Header>
+              <Form placeholderSearch='Busca tu personaje' onNameChange={onNameChange}></Form>
+              <List list={characters}></List>
+            </>
+        }>
+        </Route>
+        <Route
+          path='/CharacterDetail/:id'
+          render={routerProps =>
+            <CharacterDetail match={routerProps.match} elem={searchUserById(routerProps.match.params.id, allCharacters)}></CharacterDetail>
+          }
+        ></Route>
+
+      </Switch>
     </>
   );
 }
