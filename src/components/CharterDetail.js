@@ -26,7 +26,7 @@ function CharterDetail(props) {
   } else {
     return (
       <>
-        <h1>No hay datos</h1>
+        <h2>No hay datos</h2>
         <Link to={'/'}>Volver</Link>
       </>
     )

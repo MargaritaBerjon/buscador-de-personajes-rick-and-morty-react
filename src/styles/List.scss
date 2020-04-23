@@ -3,4 +3,22 @@
   justify-content: center;
   flex-wrap: wrap;
   background-color: #44281d;
+  height: 75vh;
+}
+
+.list-no-results {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.list-no-content {
+  color: white;
+}
+
+.list-detail-button {
+  color: white;
+  font-weight: bold;
+  font-size: larger;
+  padding: 1rem;
 }
