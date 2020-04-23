@@ -21,8 +21,13 @@ function App() {
   }, []);
 
   function onNameChange({ target }) {
+    localStorage.setItem('userSearch', target.value)
     filters.name = target.value;
     setCharacters(applyFilters());
+  }
+
+  function onSubmit(ev) {
+    ev.preventDefault()
   }
 
   function applyFilters() {
@@ -41,7 +46,7 @@ function App() {
         <Route exact path='/' render={
           () =>
             <>
-              <Form placeholderSearch='Busca tu personaje' onNameChange={onNameChange}></Form>
+              <Form placeholderSearch='Busca tu personaje' onNameChange={onNameChange} onSubmit={onSubmit}></Form>
               <List list={characters}></List>
             </>
         }>
