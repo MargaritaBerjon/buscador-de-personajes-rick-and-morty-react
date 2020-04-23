@@ -6,20 +6,22 @@ function CharterDetail(props) {
 
   if (props.elem) {
     return (
-      <article className='character-detail'>
-        <div className='character-detail-img'>
-          <h2 >{props.elem.name}</h2>
-          <img src={props.elem.image} alt={
-            props.elem.name}></img>
-        </div>
-        <div className='character-detail-content'>
-          <p>{props.elem.species}</p>
-          <p >{props.elem.status}</p>
-          <p>{props.elem.origin.name}</p>
-          <p>{'Episodes: ' + props.elem.episode.length}</p>
-          <Link to={'/'} className='.character-detail-button'>Volver</Link>
-        </div>
-      </article>
+      <section className='character'>
+        <article className='character-detail'>
+          <div className='character-detail-img'>
+            <h2 >{props.elem.name}</h2>
+            <img src={props.elem.image} alt={
+              props.elem.name}></img>
+          </div>
+          <div className='character-detail-content'>
+            <p>{props.elem.species}</p>
+            <p >{props.elem.status}</p>
+            <p>{props.elem.origin.name}</p>
+            <p>{'Episodes: ' + props.elem.episode.length}</p>
+          </div>
+        </article>
+        <Link to={'/'} className='character-detail-button'>Volver</Link>
+      </section>
     );
   } else {
     return (
