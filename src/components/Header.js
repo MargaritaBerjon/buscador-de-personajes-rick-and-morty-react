@@ -6,7 +6,9 @@ function Header() {
 
   return (
     <h1 className='header'>
-      <img src={logo} alt='Logo Rick and Morty'></img>
+      <div>
+        <img className='logo' src={logo} alt='Logo Rick and Morty'></img>
+      </div>
     </h1>
   );
 }
