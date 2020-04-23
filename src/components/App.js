@@ -7,7 +7,7 @@ import Form from './Form';
 import List from './List';
 import CharacterDetail from './CharterDetail'
 
-let allCharacters = [];
+
 let filters = { name: '' };
 
 function App() {
@@ -15,15 +15,14 @@ function App() {
 
   useEffect(() => {
     getCharactersFromAPI().then(characters => {
-      allCharacters = characters;
       setCharacters(characters)
     })
   }, []);
 
   function onNameChange({ target }) {
-    localStorage.setItem('userSearch', target.value)
+    // localStorage.setItem('userSearch', target.value)
     filters.name = target.value;
-    setCharacters(applyFilters());
+    setCharacters(target.value);
   }
 
   function onSubmit(ev) {
@@ -32,7 +31,7 @@ function App() {
 
   function applyFilters() {
     //Si filters.name.length es true (hay algo escrito) ? se hace el filtro de allcharacter por nombre, si es false (no hay nada escrito) : se muestran todos los characters.
-    return filters.name.length ? allCharacters.filter(elem => elem.name.toUpperCase().includes(filters.name.toUpperCase())) : allCharacters;
+    return filters.name.length ? characters.filter(elem => elem.name.toUpperCase().includes(filters.name.toUpperCase())) : characters;
   }
 
   function searchUserById(id, array) {
@@ -47,14 +46,14 @@ function App() {
           () =>
             <>
               <Form placeholderSearch='Busca tu personaje' onNameChange={onNameChange} onSubmit={onSubmit}></Form>
-              <List list={characters}></List>
+              <List list={characters} applyFilters={applyFilters}></List>
             </>
         }>
         </Route>
         <Route
           path='/CharacterDetail/:id'
           render={routerProps =>
-            <CharacterDetail match={routerProps.match} elem={searchUserById(routerProps.match.params.id, allCharacters)}></CharacterDetail>
+            <CharacterDetail match={routerProps.match} elem={searchUserById(routerProps.match.params.id, characters)}></CharacterDetail>
           }
         ></Route>
 
