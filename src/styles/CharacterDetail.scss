@@ -10,10 +10,9 @@
 .character-detail {
   display: flex;
   align-items: center;
-  padding: 1rem;
+  padding: 2rem;
   background-color: #f0e14a;
   border: 0.5rem solid #97ce4c;
-  height: fit-content;
 }
 
 .character-detail-content {
@@ -23,5 +22,18 @@
   color: white;
   font-weight: bold;
   font-size: larger;
-  padding: 1rem;
+  padding: 0.2rem;
+}
+
+@media all and (max-width: 414px) {
+  .character-detail {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    align-items: baseline;
+  }
+
+  .character-detail-content {
+    margin-left: 0rem;
+  }
 }

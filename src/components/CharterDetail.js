@@ -8,7 +8,7 @@ function CharterDetail(props) {
     return (
       <section className='character'>
         <article className='character-detail'>
-          <div className='character-detail-img'>
+          <div>
             <h2 >{props.elem.name}</h2>
             <img src={props.elem.image} alt={
               props.elem.name}></img>
