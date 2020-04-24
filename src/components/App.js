@@ -28,10 +28,10 @@ function App() {
 
   function applyFilters() {
     //Si filters.name.length es true (hay algo escrito) ? se hace el filtro de allcharacter por nombre, si es false (no hay nada escrito) : se muestran todos los characters.
-    return searchInput.length ? characters.filter(elem => elem.name.toUpperCase().includes(searchInput.toUpperCase())) : characters;
+    return searchInput ? characters.filter(elem => elem.name.toUpperCase().includes(searchInput.toUpperCase())) : characters;
   }
 
-  function searchUserById(id, array) {
+  function searchCharacterById(id, array) {
     return array.find(elem => elem.id.toString() === id.toString());
   }
 
@@ -55,7 +55,7 @@ function App() {
         <Route
           path='/CharacterDetail/:id'
           render={routerProps =>
-            <CharacterDetail match={routerProps.match} elem={searchUserById(routerProps.match.params.id, characters)}></CharacterDetail>
+            <CharacterDetail match={routerProps.match} elem={searchCharacterById(routerProps.match.params.id, characters)}></CharacterDetail>
           }
         ></Route>
       </Switch>

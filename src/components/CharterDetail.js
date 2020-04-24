@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from "react-router-dom";
+import noresults from '../images/noresults.png'
 import '../styles/CharacterDetail.scss';
 
 function CharterDetail(props) {
@@ -17,7 +18,7 @@ function CharterDetail(props) {
             <p>{props.elem.species}</p>
             <p >{props.elem.status}</p>
             <p>{props.elem.origin.name}</p>
-            <p>{'Episodes: ' + props.elem.episode.length}</p>
+            <p>{'Episodios: ' + props.elem.episode.length}</p>
           </div>
         </article>
         <Link to={'/'} className='character-detail-button'>Volver</Link>
@@ -25,10 +26,11 @@ function CharterDetail(props) {
     );
   } else {
     return (
-      <>
-        <h2>No hay datos</h2>
-        <Link to={'/'}>Volver</Link>
-      </>
+      <div className='character-detail-no-content'>
+        <h2 className='list-no-content'>No hay datos</h2>
+        <Link className='character-detail-button' to={'/'}><img src={noresults} alt='Rick and Morty'></img>
+        Volver</Link>
+      </div>
     )
   }
 }
