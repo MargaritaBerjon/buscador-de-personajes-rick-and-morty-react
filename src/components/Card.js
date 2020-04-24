@@ -3,8 +3,6 @@ import { Link } from "react-router-dom";
 import '../styles/Card.scss';
 
 function Card(props) {
-
-
   return (
     <article className='card'><img src={props.elem.image} alt={
       props.elem.name}></img>

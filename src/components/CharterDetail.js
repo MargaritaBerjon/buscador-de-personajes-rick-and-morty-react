@@ -33,5 +33,4 @@ function CharterDetail(props) {
   }
 }
 
-
 export default CharterDetail;

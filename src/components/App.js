@@ -17,8 +17,6 @@ function App() {
     })
   }, []);
 
-
-
   function onNameChange({ target }) {
     setSearchInput(target.value)
     setCharacters(applyFilters());
@@ -55,7 +53,6 @@ function App() {
             <CharacterDetail match={routerProps.match} elem={searchUserById(routerProps.match.params.id, characters)}></CharacterDetail>
           }
         ></Route>
-
       </Switch>
     </>
   );
