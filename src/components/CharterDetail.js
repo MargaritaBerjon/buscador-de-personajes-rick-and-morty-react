@@ -28,8 +28,8 @@ function CharterDetail(props) {
     return (
       <div className='character-detail-no-content'>
         <h2 className='list-no-content'>No hay datos</h2>
-        <Link className='character-detail-button' to={'/'}><img src={noresults} alt='Rick and Morty'></img>
-        Volver</Link>
+        <Link className='character-detail-button' to={'/'}><img className='no-content-img' src={noresults} alt='Rick and Morty'></img>
+          <p>Volver</p></Link>
       </div>
     )
   }

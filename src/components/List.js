@@ -11,7 +11,7 @@ function List(props) {
     < section className="list" >
       {props.list.length ? props.list.map((elem, i) => <Card key={i} elem={elem}></Card>) : <div className='list-no-results'>
         <h2 className='list-no-content'>No hay ningún personaje que coincida con la palabra "{props.value}"</h2>
-        <img src={noresults} alt='Rick and Morty'></img>
+        <img className='no-content-img' src={noresults} alt='Rick and Morty'></img>
       </div>}
     </section >
   );
