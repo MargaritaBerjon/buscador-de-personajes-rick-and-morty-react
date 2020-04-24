@@ -11,12 +11,12 @@ function Form(props) {
       <div className="Radio">
         {
           props.list.map((elem, i) =>
-            <label htmlFor={elem} key={i} name={props.name}><input type='radio' id={elem} name={props.name} value={elem} onChange={props.onGenderChange} />{elem}</label>
+            <label htmlFor={elem} key={i} name={props.name}><input className='form-input-radio' type='radio' id={elem} name={props.name} value={elem} onChange={props.onGenderChange} />{elem}</label>
           )
         }
       </div>
       <button className='form-reset' type="reset" onClick={props.onReset}>
-        Borrar busqueda
+        Borrar búsqueda
       </button>
     </form >
   );

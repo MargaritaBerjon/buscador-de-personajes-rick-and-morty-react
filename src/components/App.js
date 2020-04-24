@@ -28,6 +28,17 @@ function App() {
     setCharacters(characters);
   }
 
+
+  //Intento de refactoring de los métodos onchange
+  // function onChange({ target }) {
+  //   const kind = target.value;
+  //   console.log('soy search ' + setSearchInput(kind));
+  //   console.log('soy genders ' + setGenders(kind));
+  //   setSearchInput(kind);
+  //   setGenders(kind);
+  //   setCharacters(characters);
+  // }
+
   function onSubmit(ev) {
     ev.preventDefault()
   }
@@ -44,6 +55,7 @@ function App() {
 
   function newSearch() {
     setSearchInput('');
+    setGenders('')
     setCharacters(characters);
   }
 
