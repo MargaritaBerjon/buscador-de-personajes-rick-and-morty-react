@@ -4,6 +4,14 @@
   background-color: #f0e14a;
   border: 0.5rem solid #97ce4c;
   text-align: center;
+  color: black;
+  transition-property: transform, box-shadow;
+  transition-duration: 1s;
+}
+
+.card:hover {
+  transform: scale(1.02);
+  box-shadow: 2px 2px 53px 9px rgba(151, 206, 76, 0.71);
 }
 
 .card-button {

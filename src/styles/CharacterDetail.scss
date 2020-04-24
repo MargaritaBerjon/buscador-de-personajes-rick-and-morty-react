@@ -12,17 +12,19 @@
   padding: 2rem;
   background-color: #f0e14a;
   border: 0.5rem solid #97ce4c;
+  color: black;
 }
 
 .character-detail-content {
   margin-left: 1rem;
 }
 .character-detail-button {
-  text-align: center;
+  background-color: #e4a788;
   color: white;
   font-weight: bold;
   font-size: larger;
   padding: 0.2rem;
+  margin-top: 1rem;
 }
 
 .character-detail-no-content {

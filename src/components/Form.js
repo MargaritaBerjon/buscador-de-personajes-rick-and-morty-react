@@ -16,7 +16,7 @@ function Form(props) {
         }
       </div>
       <button className='form-reset' type="reset" onClick={props.onReset}>
-        Borrar búsqueda
+        Nueva búsqueda
       </button>
     </form >
   );
