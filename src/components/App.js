@@ -10,6 +10,7 @@ import CharacterDetail from './CharterDetail'
 function App() {
   const [characters, setCharacters] = useState([])
   const [searchInput, setSearchInput] = useState('')
+  const [genders, setGenders] = useState('')
 
   useEffect(() => {
     getCharactersFromAPI().then(characters => {
@@ -22,13 +23,19 @@ function App() {
     setCharacters(characters);
   }
 
+  function onGenderChange({ target }) {
+    setGenders(target.value);
+    setCharacters(characters);
+  }
+
   function onSubmit(ev) {
     ev.preventDefault()
   }
 
   function applyFilters() {
     //Si filters.name.length es true (hay algo escrito) ? se hace el filtro de allcharacter por nombre, si es false (no hay nada escrito) : se muestran todos los characters.
-    return searchInput ? characters.filter(elem => elem.name.toUpperCase().includes(searchInput.toUpperCase())) : characters;
+    let filteredCharacters = searchInput ? characters.filter(elem => elem.name.toUpperCase().includes(searchInput.toUpperCase())) : characters;
+    return genders.length ? filteredCharacters.filter(elem => elem.gender === genders) : filteredCharacters;
   }
 
   function searchCharacterById(id, array) {
@@ -40,6 +47,16 @@ function App() {
     setCharacters(characters);
   }
 
+  function getGenders() {
+    //Creo un SET (Como un array sin repeticiones)
+    const genders = new Set([]);
+    characters.map(elem =>
+      genders.add(elem.gender)
+    );
+    //Transforma un set en Array
+    return Array.from(genders);
+  }
+
   return (
     <>
       <Header></Header>
@@ -47,7 +64,7 @@ function App() {
         <Route exact path='/' render={
           () =>
             <>
-              <Form placeholderSearch='Busca tu personaje' onNameChange={onNameChange} onSubmit={onSubmit} value={searchInput} onReset={newSearch}></Form>
+              <Form placeholderSearch='Busca tu personaje' onNameChange={onNameChange} onSubmit={onSubmit} value={searchInput} onReset={newSearch} list={getGenders()} name={'gender'} onGenderChange={onGenderChange}></Form>
               <List list={applyFilters()} value={searchInput} ></List>
             </>
         }>
