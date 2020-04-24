@@ -19,7 +19,7 @@ function App() {
 
   function onNameChange({ target }) {
     setSearchInput(target.value)
-    setCharacters(applyFilters());
+    setCharacters(characters);
   }
 
   function onSubmit(ev) {
@@ -35,6 +35,11 @@ function App() {
     return array.find(elem => elem.id.toString() === id.toString());
   }
 
+  function newSearch() {
+    setSearchInput('');
+    setCharacters(characters);
+  }
+
   return (
     <>
       <Header></Header>
@@ -42,7 +47,7 @@ function App() {
         <Route exact path='/' render={
           () =>
             <>
-              <Form placeholderSearch='Busca tu personaje' onNameChange={onNameChange} onSubmit={onSubmit} value={searchInput}></Form>
+              <Form placeholderSearch='Busca tu personaje' onNameChange={onNameChange} onSubmit={onSubmit} value={searchInput} onReset={newSearch}></Form>
               <List list={applyFilters()} value={searchInput} ></List>
             </>
         }>
