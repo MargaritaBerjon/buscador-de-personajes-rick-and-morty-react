@@ -17,6 +17,8 @@ function App() {
     })
   }, []);
 
+
+
   function onNameChange({ target }) {
     setSearchInput(target.value)
     setCharacters(applyFilters());
