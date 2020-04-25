@@ -66,7 +66,7 @@ function App() {
       genders.add(item.gender)
     );
     //Transforma un set en Array
-    return Array.from(genders);
+    return Array.from(genders).sort((gender, othergender) => gender.localeCompare(othergender));
   }
 
   return (
