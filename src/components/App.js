@@ -62,8 +62,8 @@ function App() {
   function getGenders() {
     //Creo un SET (Como un array sin repeticiones)
     const genders = new Set([]);
-    characters.map(elem =>
-      genders.add(elem.gender)
+    characters.map(item =>
+      genders.add(item.gender)
     );
     //Transforma un set en Array
     return Array.from(genders);
@@ -76,7 +76,7 @@ function App() {
         <Route exact path='/' render={
           () =>
             <>
-              <Form placeholderSearch='Busca tu personaje' onNameChange={onNameChange} onSubmit={onSubmit} value={searchInput} onReset={newSearch} list={getGenders()} name={'gender'} onGenderChange={onGenderChange}></Form>
+              <Form placeholderSearch='Busca tu personaje' onNameChange={onNameChange} onSubmit={onSubmit} value={searchInput} onReset={newSearch} items={getGenders()} name={'gender'} onGenderChange={onGenderChange}></Form>
               <List list={applyFilters()} value={searchInput} ></List>
             </>
         }>

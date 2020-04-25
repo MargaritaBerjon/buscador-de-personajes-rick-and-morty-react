@@ -10,8 +10,8 @@ function Form(props) {
       </input>
       <div className="Radio">
         {
-          props.list.map((elem, i) =>
-            <label htmlFor={elem} key={i} name={props.name}><input className='form-input-radio' type='radio' id={elem} name={props.name} value={elem} onChange={props.onGenderChange} />{elem}</label>
+          props.items.map((item, i) =>
+            <label htmlFor={item} key={i} name={props.name}><input className='form-input-radio' type='radio' id={item} name={props.name} value={item} onChange={props.onGenderChange} />{item}</label>
           )
         }
       </div>

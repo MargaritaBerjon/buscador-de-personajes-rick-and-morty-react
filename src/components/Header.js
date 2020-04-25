@@ -8,7 +8,7 @@ function Header() {
   return (
     <h1 className='header'>
       <div>
-        <Link to={'/'}>
+        <Link to='/' replace>
           <img className='logo' src={logo} alt='Logo Rick and Morty'></img>
         </Link>
       </div>
