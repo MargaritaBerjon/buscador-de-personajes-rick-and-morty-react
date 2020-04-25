@@ -7,7 +7,7 @@ function CharterDetail(props) {
 
   if (props.elem) {
     return (
-      <section className='character'>
+      <main className='character'>
         <article className='character-detail'>
           <div>
             <h2 >{props.elem.name}</h2>
@@ -22,7 +22,7 @@ function CharterDetail(props) {
           </div>
         </article>
         <Link to={'/'} className='character-detail-button'>Volver</Link>
-      </section>
+      </main>
     );
   } else {
     return (

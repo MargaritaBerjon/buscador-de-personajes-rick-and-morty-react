@@ -17,18 +17,19 @@ function Card(props) {
   }
 
   return (
-    <Link to={'/CharacterDetail/' + id}> <article className='card'><img src={image} alt={
-      name}></img>
-      <h2 >{name}</h2>
-      <div className='card-img'>
-        <div className='card-content'>
-          <p>{species + ' ' + speciesConversion[species]} </p>
-          <p >{'Estado: ' + statusConversion[status]}</p>
-          <p className='card-button'> Más info</p>
+    <article className='card'>
+      <Link to={'/CharacterDetail/' + id}>
+        <img src={image} alt={name}></img>
+        <h2 >{name}</h2>
+        <div className='card-img'>
+          <div className='card-content'>
+            <p>{species + ' ' + speciesConversion[species]} </p>
+            <p >{'Estado: ' + statusConversion[status]}</p>
+            <p className='card-button'> Más info</p>
+          </div>
         </div>
-      </div>
+      </Link>
     </article>
-    </Link>
   );
 }
 
