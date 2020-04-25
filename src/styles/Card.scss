@@ -4,7 +4,6 @@
   background-color: #f0e14a;
   border: 0.5rem solid #97ce4c;
   text-align: center;
-  color: black;
   transition-property: transform, box-shadow;
   transition-duration: 1s;
 }
@@ -19,4 +18,12 @@
   font-weight: bold;
   font-size: larger;
   padding: 0.2rem;
+}
+
+.card-content {
+  color: black;
+}
+
+.card-name {
+  color: black;
 }
