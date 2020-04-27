@@ -3,6 +3,13 @@ import '../styles/Form.scss';
 
 function Form(props) {
 
+  const genderTranslate = {
+    Female: 'Mujer',
+    Male: 'Hombre',
+    unknown: 'Indefinido'
+  }
+
+
   return (
     <form className='form' onSubmit={props.onSubmit}>
       <input className='fom-input-text' type='search' onChange={props.onNameChange} placeholder={props.placeholderSearch}
@@ -11,7 +18,7 @@ function Form(props) {
       <div className="Radio">
         {
           props.items.map((item, i) =>
-            <label htmlFor={item} key={i} name={props.name}><input className='form-input-radio' type='radio' id={item} name={props.name} value={item} onChange={props.onGenderChange} />{item}</label>
+            <label htmlFor={item} key={i} name={props.name}><input className='form-input-radio' type='radio' id={item} name={props.name} value={item} onChange={props.onGenderChange} />{genderTranslate[item]}</label>
           )
         }
       </div>

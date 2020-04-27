@@ -6,11 +6,16 @@
   text-align: center;
   transition-property: transform, box-shadow;
   transition-duration: 1s;
+  border-radius: 10%;
 }
 
 .card:hover {
   transform: scale(1.02);
   box-shadow: 2px 2px 53px 9px rgba(151, 206, 76, 0.71);
+}
+
+.card-img {
+  border-radius: 10%;
 }
 
 .card-button {
