@@ -8,6 +8,10 @@ function Form(props) {
       <input className='fom-input-text' type='search' onChange={props.onNameChange} placeholder={props.placeholderSearch}
         value={props.value}>
       </input>
+      <input className='fom-input-text' type='text' onChange={props.onNumberChange} value={props.valueEpisodes}>
+      </input>
+
+
       <div className="Radio">
         {
           props.items.map((item, i) =>

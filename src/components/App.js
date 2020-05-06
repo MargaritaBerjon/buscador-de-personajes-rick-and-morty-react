@@ -11,6 +11,7 @@ function App() {
   const [characters, setCharacters] = useState([])
   const [searchInput, setSearchInput] = useState('')
   const [genders, setGenders] = useState('')
+  const [episodes, setEpisodes] = useState('')
 
   useEffect(() => {
     getCharactersFromAPI().then(characters => {
@@ -20,33 +21,40 @@ function App() {
 
   function onNameChange({ target }) {
     setSearchInput(target.value)
-    setCharacters(characters);
   }
 
   function onGenderChange({ target }) {
     setGenders(target.value);
-    setCharacters(characters);
+
   }
 
+  function onNumberChange({ target }) {
+    setEpisodes(target.value);
 
-  //Intento de refactoring de los métodos onchange
-  // function onChange({ target }) {
-  //   const kind = target.value;
-  //   console.log('soy search ' + setSearchInput(kind));
-  //   console.log('soy genders ' + setGenders(kind));
-  //   setSearchInput(kind);
-  //   setGenders(kind);
-  //   setCharacters(characters);
-  // }
+  }
 
   function onSubmit(ev) {
     ev.preventDefault()
   }
 
   function applyFilters() {
-    //Si filters.name.length es true (hay algo escrito) ? se hace el filtro de allcharacter por nombre, si es false (no hay nada escrito) : se muestran todos los characters.
     let filteredCharacters = searchInput ? characters.filter(elem => elem.name.toUpperCase().includes(searchInput.toUpperCase())) : characters;
-    return genders.length ? filteredCharacters.filter(elem => elem.gender === genders) : filteredCharacters;
+    let filterGender = genders.length ? filteredCharacters.filter(elem => elem.gender === genders) : filteredCharacters;
+    let filterEpisodes = characters.filter(elem => elem.episode.length === parseInt(episodes));
+
+    if (searchInput) {
+      return filterGender;
+
+    } if (genders.length) {
+      return filterGender;
+    }
+
+    if (episodes) {
+      return filterEpisodes;
+
+    } else {
+      return characters;
+    }
   }
 
   function searchCharacterById(id, array) {
@@ -55,8 +63,9 @@ function App() {
 
   function newSearch() {
     setSearchInput('');
-    setGenders('')
-    setCharacters(characters);
+    setGenders('');
+    setEpisodes('');
+
   }
 
   function getGenders() {
@@ -76,7 +85,7 @@ function App() {
         <Route exact path='/' render={
           () =>
             <>
-              <Form placeholderSearch='Busca tu personaje' onNameChange={onNameChange} onSubmit={onSubmit} value={searchInput} onReset={newSearch} items={getGenders()} name={'gender'} onGenderChange={onGenderChange}></Form>
+              <Form placeholderSearch='Busca tu personaje' onNameChange={onNameChange} onSubmit={onSubmit} value={searchInput} onReset={newSearch} items={getGenders()} name={'gender'} onGenderChange={onGenderChange} onNumberChange={onNumberChange} valueEpisodes={episodes}></Form>
               <List list={applyFilters()} value={searchInput} ></List>
             </>
         }>
