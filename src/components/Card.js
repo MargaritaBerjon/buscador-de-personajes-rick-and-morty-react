@@ -19,7 +19,7 @@ function Card(props) {
   return (
     <article className='card'>
       <Link to={'/CharacterDetail/' + id}>
-        <img src={image} alt={name}></img>
+        <img className='card-img' src={image} alt={name}></img>
         <h2 className='card-name'>{name}</h2>
         <div>
           <div className='card-content'>

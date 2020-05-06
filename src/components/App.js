@@ -48,7 +48,6 @@ function App() {
     } if (genders.length) {
       return filterGender;
     }
-
     if (episodes) {
       return filterEpisodes;
 
@@ -85,7 +84,7 @@ function App() {
         <Route exact path='/' render={
           () =>
             <>
-              <Form placeholderSearch='Busca tu personaje' onNameChange={onNameChange} onSubmit={onSubmit} value={searchInput} onReset={newSearch} items={getGenders()} name={'gender'} onGenderChange={onGenderChange} onNumberChange={onNumberChange} valueEpisodes={episodes}></Form>
+              <Form placeholderSearch='Busca tu personaje' placeholderEpisodes='Busca por nº de episodios' onNameChange={onNameChange} onSubmit={onSubmit} value={searchInput} onReset={newSearch} items={getGenders()} name={'gender'} onGenderChange={onGenderChange} onNumberChange={onNumberChange} valueEpisodes={episodes}></Form>
               <List list={applyFilters()} value={searchInput} ></List>
             </>
         }>

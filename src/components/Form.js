@@ -5,13 +5,13 @@ function Form(props) {
 
   return (
     <form className='form' onSubmit={props.onSubmit}>
-      <input className='fom-input-text' type='search' onChange={props.onNameChange} placeholder={props.placeholderSearch}
-        value={props.value}>
-      </input>
-      <input className='fom-input-text' type='text' onChange={props.onNumberChange} value={props.valueEpisodes}>
-      </input>
-
-
+      <div>
+        <input className='fom-input-text' type='search' onChange={props.onNameChange} placeholder={props.placeholderSearch}
+          value={props.value}>
+        </input>
+        <input className='fom-input-text' type='search' onChange={props.onNumberChange} value={props.valueEpisodes} placeholder={props.placeholderEpisodes}>
+        </input>
+      </div>
       <div className="Radio">
         {
           props.items.map((item, i) =>
